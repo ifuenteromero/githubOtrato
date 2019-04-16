@@ -19,18 +19,13 @@ function handleButtonClick(){
     
 }
 function Draw(name){
-    // name='Irene';
-    console.log(name.length);
     let arrayName = name.split('');
-   console.log(arrayName);
-   for (const char of arrayName){
-    const newItem = document.createElement('li');
-    listEl.appendChild(newItem);
-    const newChar = document.createTextNode(char);
-    newItem.appendChild(newChar);
-   }
-
-
+    for (const char of arrayName){
+         const newItem = document.createElement('li');
+        listEl.appendChild(newItem);
+         const newChar = document.createTextNode(char);
+         newItem.appendChild(newChar);
+         }
 }
 
 
@@ -39,21 +34,8 @@ function Draw(name){
        let fullname = stringToDivide;
        let arrayFullName = fullname.split(sep);
        return arrayFullName[0];
-      
 
    }
-//     fetch('https://dog.ceo/api/breeds/image/random')
-//   .then(response => response.json())
-//   .then(data => {
-//     const img = document.querySelector('img');
-//     img.src = data.message;
-//     img.alt = 'Un perro';
-//   });
-
-
-function prueba(){
-    console.log(nameToDraw);
-}
 
 buttonEl.addEventListener('click',handleButtonClick);
-auxEl.addEventListener('click',prueba);
+
