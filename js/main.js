@@ -3,6 +3,7 @@ const inputEl = document.getElementById('name');
 const buttonEl = document.querySelector('.btn');
 let nameToDraw;
 const auxEl = document.querySelector('.aux');
+const listEl =document.querySelector('.list');
 console.log(auxEl);
 
 function handleButtonClick(){
@@ -12,10 +13,27 @@ function handleButtonClick(){
     .then(response=>response.json())
     .then(data=>{
         let fullName = data.name;
-        return nameToDraw=getName(fullName,' ');
+        nameToDraw=getName(fullName,' ');
+        Draw(nameToDraw);
     })
     
 }
+function Draw(name){
+    // name='Irene';
+    console.log(name.length);
+    let arrayName = name.split('');
+   console.log(arrayName);
+   for (const char of arrayName){
+    const newItem = document.createElement('li');
+    listEl.appendChild(newItem);
+    const newChar = document.createTextNode(char);
+    newItem.appendChild(newChar);
+   }
+
+
+}
+
+
 
    function getName(stringToDivide,sep){
        let fullname = stringToDivide;
@@ -33,6 +51,9 @@ function handleButtonClick(){
 //   });
 
 
-
+function prueba(){
+    console.log(nameToDraw);
+}
 
 buttonEl.addEventListener('click',handleButtonClick);
+auxEl.addEventListener('click',prueba);
