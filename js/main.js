@@ -2,10 +2,7 @@
 const inputEl = document.getElementById('name');
 const buttonEl = document.querySelector('.btn');
 let nameToDraw;
-const auxEl = document.querySelector('.aux');
 const listEl =document.querySelector('.list');
-console.log(auxEl);
-
 function handleButtonClick(){
     const inputValue=inputEl.value;
     console.log(inputValue);
